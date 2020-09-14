@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+   <ion-title size="large">Adicionar conteúdo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+
+
+ 
+<ion-item>
+  <ion-label>Tipo do conteúdo</ion-label>
+  <ion-select okText="Ok" cancelText="Cancelar">
+    <ion-select-option value="1">Anotação</ion-select-option>
+    <ion-select-option value="2">Imagem</ion-select-option>
+  </ion-select>
+</ion-item>
+   
+
+    
+  
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="proximo()" >
+  <ion-icon name="arrow-forward-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  
+</ion-content>

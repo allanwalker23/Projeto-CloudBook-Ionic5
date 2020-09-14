@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+   <ion-title size="large">Configurações</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-list>
+  <ion-item-divider>
+    <ion-label>Conta</ion-label>
+  </ion-item-divider>
+  
+<ion-item (click)="perfil()">
+  <ion-avatar slot="start">
+    <img *ngIf="liberado==false" src="{{global.foto_default}}" class="perso">
+    <img *ngIf="liberado==true" [src]="foto_perfil" class="perso">
+  </ion-avatar>
+  
+  <ion-label>
+    <h2>{{aluno?.nome}}</h2>
+    <p>{{aluno?.email}}</p>
+  </ion-label>
+
+</ion-item>
+
+<ion-item>
+  
+    <ion-icon name="folder-open-sharp" slot="start"></ion-icon>
+  
+  <ion-label>
+    <h2>Repositório atual</h2>
+    <p>{{nomeRepositorio}}</p>
+  </ion-label>
+</ion-item>
+
+
+
+<ion-item-group>
+  <ion-item-divider>
+    <ion-label>Ajustes</ion-label>
+  </ion-item-divider>
+
+  <ion-item>
+    <ion-icon name="contrast-outline" slot="start"></ion-icon>
+    <ion-label>Modo escuro</ion-label>
+    <ion-toggle  color="success" (ionChange)="trocar()"></ion-toggle>
+  </ion-item>
+
+  <ion-item (click)="creditos()">
+    <ion-icon name="code-slash" slot="start"></ion-icon>
+    <ion-label>Créditos</ion-label>
+  </ion-item>
+
+  <ion-item (click)="tutorial()">
+    <ion-icon name="easel-outline" slot="start"></ion-icon>
+    <ion-label>Tutorial</ion-label>
+  </ion-item>
+  
+  <ion-item (click)="tutorial2()">
+    <ion-icon name="sync-circle-outline" slot="start"></ion-icon>
+    <ion-label>Sincronização</ion-label>
+  </ion-item>
+  
+  <ion-item (click)="sair()">
+    <ion-icon name="exit-outline" slot="start"></ion-icon>
+    <ion-label>Sair</ion-label>
+  </ion-item>
+
+
+  
+  <ion-item (click)="confirmacao()">
+    <ion-icon name="trash" slot="start"></ion-icon>
+    <ion-label>Apagar conta</ion-label>
+  </ion-item>
+</ion-item-group>
+</ion-list>
+
+
+  
+</ion-content>

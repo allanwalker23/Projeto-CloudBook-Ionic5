@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons (click)="confirmacao()" slot="end">
+      <ion-icon name="trash" color="danger" style="zoom: 1.5; padding-right: 5px;"></ion-icon>
+      
+    </ion-buttons>
+    <ion-title>{{nome_repositorio}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="4">
+      
+      <div >
+       
+          
+      </div>
+     
+    </ion-col>
+   
+  </ion-row>
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="9">
+      
+    </ion-col>
+  </ion-row>
+  <form [formGroup]="formulario" novalidate>
+  <ion-item>
+    <ion-label position="stacked">Nome do Repositório</ion-label>
+    <ion-input [(ngModel)]="nome" formControlName="nome_repositorio" value="{{repositorio?.nome}}" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Descrição do Repositório(opcional)</ion-label>
+    <ion-textarea [(ngModel)]="desc" formControlName="descricao" value="{{repositorio?.descricao}}" type="text"></ion-textarea>
+  </ion-item>
+
+ </form>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="atualizar()" defaultHref="home">
+      <ion-icon style=" color:black"name="checkmark"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+  
+  
+</ion-content>

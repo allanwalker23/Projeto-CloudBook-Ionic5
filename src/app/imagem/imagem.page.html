@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+   <ion-title size="large">Adicionar Imagem</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-refresher slot="fixed" (ionRefresh)="atualizar_pagina($event)" pullMin="100" pullMax="200">
+    <ion-refresher-content 
+      pullingIcon="arrow-down-outline" 
+      pullingText="Puxe para atualizar" 
+      refreshingSpinner="crescent"
+      refreshingText="Atualizando...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+
+  <div (click)="acao()">
+
+ <img *ngIf="liberado==false" src="{{global.logo_quadro}}" style="width: 380px;">
+<img *ngIf="liberado==true" [src]="foto" style="width: 380px;">
+</div>
+    <ion-item >
+      
+      <ion-input  [(ngModel)]="nome_co" placeholder="Assunto do conteúdo" name="nome" type="text"></ion-input>
+  </ion-item>
+
+
+
+  <ion-item (ionChange)="selecionar($event,disciplina)" >
+    <ion-label position="stacked">Disciplina</ion-label>
+      <ion-select>
+         
+        <ion-select-option *ngFor="let disciplina of disciplinas"  value="{{disciplina.nome}},{{disciplina.id}}">{{disciplina.nome}}</ion-select-option>
+       
+      </ion-select>
+
+</ion-item>
+
+
+     
+      <ion-button (click)="adicionar()" expand="block">Adicionar conteúdo</ion-button>
+   
+     
+    
+  
+</ion-content>

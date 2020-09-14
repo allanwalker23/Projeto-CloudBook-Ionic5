@@ -1,0 +1,72 @@
+
+<ion-header [translucent]="true">
+  
+  <ion-toolbar >
+    
+    <ion-buttons slot="primary">
+    
+      <ion-button (click)="config()">
+        <ion-icon slot="icon-only" name="settings-outline" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+        <img slot="start" src="{{global.logo}}" width="34px">
+      
+  
+  
+    <ion-title style=" font-size: medium; padding-left: 7px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"><b>CloudBook</b></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="fundo">
+  <ion-refresher slot="fixed" (ionRefresh)="atualizar_pagina($event)" pullMin="100" pullMax="200">
+    <ion-refresher-content 
+      pullingIcon="arrow-down-outline" 
+      pullingText="Puxe para atualizar" 
+      refreshingSpinner="crescent"
+      refreshingText="Atualizando...">
+    </ion-refresher-content>
+  </ion-refresher>
+ 
+
+  <br>
+  <ion-title *ngIf="aparecer!=true" color="light" size="large">Seus repositórios</ion-title>
+  <ion-grid *ngIf="aparecer==true">
+    <ion-row class="ion-justify-content-center">
+      <ion-col size-xs="8.5" size-md="8.5">
+      <center><ion-icon color="primary" name="folder-open-sharp" style="zoom: 3.0;"></ion-icon></center>
+    
+    
+      <center><ion-title  color="light" size="large"><h3>Não há repositórios</h3></ion-title></center>
+
+    
+  </ion-col>
+</ion-row>
+  </ion-grid>
+
+  <br>
+
+  <ion-list *ngIf="aparecer!=true">
+ <ion-card ion-item *ngFor="let item of items" >
+  <ion-item (click)="update_repositorios(item)">
+    <ion-icon name="{{icone_pasta}}" slot="start"></ion-icon>
+    <ion-label >{{item.nome}}</ion-label>
+    <ion-button id="botao" fill="{{estado_botao}}" slot="end" (click)="selecionar(item,$event);$event.stopPropagation();">{{texto_botao}}</ion-button>
+  </ion-item>
+
+  <ion-card-content>
+   {{item.descricao}}
+  </ion-card-content>
+</ion-card>
+</ion-list>
+
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="adc()" >
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+
+
+</ion-content>

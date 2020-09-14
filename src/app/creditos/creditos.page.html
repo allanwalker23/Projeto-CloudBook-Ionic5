@@ -1,0 +1,97 @@
+<ion-content>
+  <div class="ion-padding">
+    <!-- ******** TOP ******** -->
+    <div class="top-container">
+      <img class="nu-white-logo" src="assets/icon/favicon.png">
+      <span class="top-user-name">CloudBook</span>
+    </div>
+    <!-- ARROW DOWN -->
+    
+  </div>
+
+  <!-- ******** CONTAINER ******** -->
+  <div class="featured-container" [class.moveToBottom]="step == 1" [class.moveToTop]="step == 0">
+    <!-- ******** CARD ******** -->
+    <!-- SKELETON -->
+    <div class="card-mid custom-skeleton animation-card" *ngIf="!loaded">
+      <div class="card-content">
+        <ion-skeleton-text class="credit-card" animated style="width: 30px; height: 20px;"></ion-skeleton-text>
+
+        <!-- CONTENT -->
+        <div class="card-container">
+          <ion-skeleton-text class="fatura-atual" animated style="width: 35%; height: 15px;"></ion-skeleton-text>
+          <ion-skeleton-text class="real" animated style="width: 80%; height: 32px;"></ion-skeleton-text>
+          <br>
+          <ion-skeleton-text class="limit" animated style="width: 60%; height: 15px;"></ion-skeleton-text>
+        </div>
+      </div>
+      <div class="card-footer">
+        <ion-row>
+          <ion-col size="2">
+            <ion-skeleton-text class="extract-image" animated style="width: 100%; height: 35px;"></ion-skeleton-text>
+          </ion-col>
+          <ion-col size="8">
+            <ion-skeleton-text class="extract-text" animated style="width: 100%; height: 35px;"></ion-skeleton-text>
+          </ion-col>
+          <ion-col size="2" class="right">
+            <img class="extract-image-arrow" style="visibility: hidden;" src="assets/right-arrow.svg">
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+    <!-- LOADED -->
+    <div class="card-mid" *ngIf="loaded">
+      <div class="card-content">
+        <img class="credit-card" src="assets/imgs/perfil.jpg">
+        
+        <!-- CONTENT -->
+        <div class="card-container">
+          <p class="fatura-atual">Feito por</p>
+          <span class="value">ALLAN HIPÓLITO</span>
+          
+          <br>
+          <span class="limit">FALCON CORPORATIONS ®</span>
+          
+          
+        </div>
+      </div>
+    
+    </div>
+  </div>
+
+  <!-- ******** FOOTER ******** -->
+  <div class="footer-menu" [class.moveToBottom2]="step == 1" [class.moveToTop]="step == 0">
+    <div class="footer-item">
+      <img class="footer-icon" src="assets/friends.svg">
+      <p class="footer-text">
+        Indicar
+        <br>
+        amigos
+      </p>
+    </div>
+
+    <div class="footer-item">
+      <img class="footer-icon" src="assets/money-2.svg">
+      <p class="footer-text">
+        Doar
+      </p>
+    </div>
+
+
+    <div class="footer-item">
+      <img class="footer-icon" src="assets/question.svg">
+      <p class="footer-text">
+        Me ajuda
+      </p>
+    </div>
+
+    
+    <div class="footer-item">
+      
+      <img class="footer-icon" style="fill: white; color: white; background: rgb(14, 163, 39);" src="assets/logo-whatsapp.svg">
+      <p class="footer-text">
+        Whatsapp
+      </p>
+    </div>
+  </div>
+</ion-content>

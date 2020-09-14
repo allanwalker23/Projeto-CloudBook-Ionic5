@@ -1,0 +1,75 @@
+<ion-header [translucent]="true">
+  <ion-toolbar >
+    
+    <ion-buttons slot="primary">
+    
+      <ion-button (click)="config()">
+        <ion-icon slot="icon-only" name="settings-outline" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+        <img slot="start" src="{{global.logo}}" width="34px">
+      
+  
+  
+    <ion-title style=" font-size: medium; padding-left: 7px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"><b>CloudBook</b></ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" >
+  
+  <ion-refresher slot="fixed" (ionRefresh)="atualizar_pagina($event)" pullMin="100" pullMax="200">
+    <ion-refresher-content 
+      pullingIcon="arrow-down-outline" 
+      pullingText="Puxe para atualizar" 
+      refreshingSpinner="crescent"
+      refreshingText="Atualizando...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <br>
+    <ion-title *ngIf="aparecer!=true" color="light" size="large">Suas disciplinas</ion-title>
+    <ion-grid *ngIf="aparecer==true">
+      <ion-row class="ion-justify-content-center">
+        <ion-col size-xs="8.2" size-md="8.2">
+        <center><ion-icon color="primary" name="document-text-sharp" style="zoom: 3.0;"></ion-icon></center>
+      
+      
+        <center><ion-title  color="light" size="large"><h3>Não há disciplinas</h3></ion-title></center>
+
+      
+    </ion-col>
+  </ion-row>
+    </ion-grid>
+
+
+  
+<br>  
+
+  <ion-list *ngIf="aparecer!=true">
+    
+    <ion-item *ngFor="let disciplina of disciplinas" (click)="clique(disciplina)">
+    
+    
+      {{disciplina.nome}}
+    <ion-item slot="end" (click)="acao(disciplina);$event.stopPropagation();">
+    <ion-icon name="ellipsis-vertical-sharp"></ion-icon>    
+  </ion-item>
+    
+    </ion-item>
+    
+  
+   
+
+    
+   
+  </ion-list>
+
+ 
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="adc()">
+      <ion-icon (click)="adc()"  name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+  
+</ion-content>

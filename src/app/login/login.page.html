@@ -1,0 +1,41 @@
+<ion-header no-border>
+ <div class="login-header ion-padding">
+     <ion-toolbar color="secondary">
+    <ion-button (click)="trocar()" slot="secondary">
+        <ion-icon  name="contrast-outline"></ion-icon>
+     </ion-button>
+    </ion-toolbar>
+     <img class="logo-img" src="assets/imgs/principal_login.png" >
+   
+ </div>
+</ion-header>
+
+<ion-content>
+<div class="center">
+    <div heading-column-lr>
+        <h1 big-heading>Login</h1>
+        <h2 small-heading (click)="cadastro()">CADASTRE-SE</h2>
+
+    </div>
+  
+
+    <ion-item transparent>
+        <ion-icon  name="person-circle"></ion-icon>
+        <ion-input [(ngModel)]="creds.email" name="email" placeholder="Email" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item transparent>
+        <ion-icon name="key"></ion-icon>
+        <ion-input [(ngModel)]="creds.senha" placeholder="Senha" name="senha" type="password"></ion-input>
+    </ion-item>
+    <ion-label  (click)="showSenha()" class="forget-password">Esqueceu a senha?</ion-label>
+
+    <div linespace></div>
+    <ion-button color="primary" (click)="login()" class="ion-button-class" shape="round" fill="solid" size="large" expand="block"
+    >LOGIN</ion-button>
+    <ion-label class="ion-text-center">Você ainda não tem uma conta?   <span class="link-button" (click)="cadastro()" >Cadastrar</span></ion-label>
+
+    
+
+</div>
+</ion-content>

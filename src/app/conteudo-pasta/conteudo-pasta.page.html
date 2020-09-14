@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Conteúdos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="atualizar_pagina($event)" pullMin="100" pullMax="200">
+    <ion-refresher-content 
+      pullingIcon="arrow-down-outline" 
+      pullingText="Puxe para atualizar" 
+      refreshingSpinner="crescent"
+      refreshingText="Atualizando...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-grid *ngIf="aparecer==true">
+    <ion-row id="nao" class="ion-justify-content-center">
+      <ion-col size-xs="8.5" size-md="8.5">
+      <center><ion-icon color="primary" name="images-sharp" style="zoom: 3.0;"></ion-icon></center>
+    
+    
+      <ion-title  color="light" size="large"><h3>Não há conteúdos</h3></ion-title>
+
+    
+  </ion-col>
+</ion-row>
+  </ion-grid>
+  
+  <ion-row *ngIf="aparecer!=true">
+   
+    <ion-col>
+
+      <ion-item-divider >
+        <ion-label>
+         {{nomeDisciplina}}
+        </ion-label>
+      </ion-item-divider>
+     
+      <ion-card ion-item *ngFor="let conteudo of conteudos" (click)="clique(conteudo)">
+      
+        <ion-card-header>
+          <ion-item style="float:right;" (click)="acao(conteudo);$event.stopPropagation();"><ion-icon name="ellipsis-vertical-sharp"></ion-icon></ion-item>
+          <ion-card-subtitle>{{conteudo.tipo}}</ion-card-subtitle>
+          <ion-card-title>{{conteudo.assunto}}</ion-card-title>
+          
+        </ion-card-header>
+      
+        <ion-card-content>
+          <p *ngIf="conteudo.tipo=='ANOTACAO'">{{conteudo.texto}}</p>
+          <center><img *ngIf="conteudo.tipo=='IMAGEM'" src="{{conteudo.texto}}" style="width: 500px;"></center>
+        </ion-card-content>
+       
+      </ion-card>
+    </ion-col>
+   
+  </ion-row>
+ 
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="verificar()" >
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

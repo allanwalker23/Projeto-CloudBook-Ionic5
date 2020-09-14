@@ -1,0 +1,106 @@
+<ion-header>
+  <ion-toolbar >
+    
+    <ion-buttons slot="primary">
+    
+      <ion-button (click)="config()">
+        <ion-icon slot="icon-only" name="settings-outline" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+        <img slot="start" src="{{global.logo}}" width="34px">
+      
+  
+  
+    <ion-title style=" font-size: medium; padding-left: 7px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;"><b>CloudBook</b></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="atualizar_pagina($event)" pullMin="100" pullMax="200">
+    <ion-refresher-content 
+      pullingIcon="arrow-down-outline" 
+      pullingText="Puxe para atualizar" 
+      refreshingSpinner="crescent"
+      refreshingText="Atualizando...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  
+   <ion-grid>
+<ion-row>
+    <ion-col size="3">
+      <ion-avatar (click)="perfil()">
+        <img *ngIf="liberado==false" src="{{global.foto_default}}" class="perso">
+        <img *ngIf="liberado==true" [src]="foto_perfil" class="perso">
+       
+      </ion-avatar>
+    
+    </ion-col>
+   <ion-col size="4">
+    <ion-label style="padding-left: 3px;">
+      <p>Bem vindo(a),</p>
+      
+      <h1>{{this.nome}}</h1>
+     
+    </ion-label>
+   </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="3">
+       <center><ion-avatar (click)="adc_foto()">
+        <img src="assets/adc_foto.png" style="margin :5px;width: 60px; height: 60px; ">       
+      </ion-avatar></center>
+      <center><p style="font-size: 9px; margin-top: 10px; display: block;">Adicionar foto</p></center>
+    </ion-col>
+
+    <ion-col size="3">
+      <center><ion-avatar (click)="adc_anotacao()">
+        <img src="assets/adc_anotacao.png" style="margin:5px; width: 60px; height: 60px;">       
+      </ion-avatar></center>
+     
+     <center> <p style="font-size: 8.8px; margin-bottom: 10px; display: block;">Adicionar anotação</p></center>
+    </ion-col>
+
+    <ion-col size="3">
+      <center><ion-avatar (click)="creditos()">
+        <img src="assets/creditos.png" style="margin:5px; width: 60px; height: 60px;">       
+      </ion-avatar></center>
+      <center><p style="font-size: 9px; margin-bottom: 10px; display: block;">Créditos</p></center>
+    </ion-col>
+
+    <ion-col size="3">
+     <center> <ion-avatar (click)="sair()" >
+        <img src="assets/sair.png" style="margin:5px; width: 60px; height: 60px;">       
+      </ion-avatar>
+    </center>
+    <center><p style="font-size: 9px; margin-bottom: 10px; display: block;">Sair</p></center>
+    </ion-col>
+ 
+  </ion-row>
+
+  <ion-row>
+    <ion-col size="3">
+     
+   
+    </ion-col>
+
+    <ion-col size="3">
+     
+    
+    </ion-col>
+
+    <ion-col size="3">
+    
+    
+    </ion-col>
+
+    <ion-col size="3">
+    
+    
+    </ion-col>
+ 
+  </ion-row>
+</ion-grid>
+</ion-content>

@@ -1,0 +1,137 @@
+
+  
+      <ion-toolbar color="black">
+     <ion-button (click)="trocar()" slot="secondary">
+         <ion-icon  name="planet-outline"></ion-icon>
+      </ion-button>
+     </ion-toolbar>
+      
+    
+  
+ 
+
+<ion-content>
+  <ion-slides style="height:100%" pager="true" [options]="slideOpts">
+    <ion-slide>
+      <ion-grid>
+   <ion-row >
+   <ion-col style="padding-bottom: 170px; " class="ion-align-self-center">
+    <img  src="{{global.logo_favicon}}" style="border-radius:10px; width: 200px;">
+    <h1>Bem vindo(a) ao CloudBook</h1>
+   <p>Um app que organizará todos os seus estudos, para começar você precisa criar sua conta, faça isso na tela de Login é rapidinho :)</p>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+
+  </ion-row>
+  </ion-grid>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-grid>
+   <ion-row >
+   <ion-col style="padding-bottom: 160px; " class="ion-align-self-center">
+    <img  src="{{global.foto_default}}" style="border-radius:100px; width: 200px;">
+    <h1>Escolha uma foto para o seu perfil</h1>
+   <p>Nas configurações escolha uma foto de sua galeria sua colocar em seu perfil,e mais uma coisa não coloque foto de anime PELO AMOR DE DEUS!</p>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+
+  </ion-row>
+  </ion-grid>
+    </ion-slide>
+    
+    <ion-slide>
+      <ion-grid>
+   <ion-row >
+   <ion-col style="padding-bottom: 100px; " class="ion-align-self-center">
+    <img  src="{{global.logo_dark}}" style="border-radius:10px; width: 200px;">
+    <h1>Escolha o seu lado da força!</h1>
+   <p>Decida o seu lado, Luminoso um lado mais calmo, sábio e inteligente, ou o lado Negro um lado que tem mais presença, que pensa fora da caixa e que não suporta viver entre padrões. |</p>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+
+  </ion-row>
+  </ion-grid>
+    </ion-slide>
+    <ion-slide>
+     
+
+      <ion-grid>
+        <ion-row >
+        <ion-col style="padding-bottom: 100px; " class="ion-align-self-center">
+          <center><ion-icon color="primary" name="folder-open-outline" style="zoom: 6.0;"></ion-icon></center>
+         <h1>Crie seu repositório</h1>
+        <p>Para poder utilizar as funções do app, primeiro você terá que um repositório, é só ir lá na tela de repositório e colocar um nome para ele. uma dica coloque uma descrição também pra ficar mais bonitinho :></p>
+         </ion-col>
+       </ion-row>
+       <ion-row>
+     
+       </ion-row>
+       </ion-grid>
+    </ion-slide>
+    <ion-slide>
+      <ion-grid>
+        <ion-row >
+        <ion-col style="padding-bottom: 100px; " class="ion-align-self-center">
+          <center><ion-icon color="primary" name="document-text-outline" style="zoom: 6.0;"></ion-icon></center>
+         <h1>Crie suas disciplinas</h1>
+        <p>Para criar uma disciplina você terá que selecionar um repositório primeiro, e o processo de criação é a mesma coisa não vou me extender KKK :S</p>
+         </ion-col>
+       </ion-row>
+       <ion-row>
+     
+       </ion-row>
+       </ion-grid>
+  </ion-slide>
+  <ion-slide>
+    <ion-grid>
+      <ion-row >
+      <ion-col style="padding-bottom: 100px; " class="ion-align-self-center">
+        <center><ion-icon color="primary" name="image-outline" style="zoom: 6.0;"></ion-icon></center>
+       <h1>Crie seus conteúdos</h1>
+      <p>Para começar a criar seus conteúdos, você terá que selecionar um repositório, e você terá 2 opções, criar uma anotação ou uma imagem do seu telefone e em seguida elá será salva na disciplina que você selecionou.</p>
+       </ion-col>
+     </ion-row>
+     <ion-row>
+   
+     </ion-row>
+     </ion-grid>
+</ion-slide>
+<ion-slide>
+<ion-grid>
+  <ion-row >
+  <ion-col style="padding-bottom: 100px; " class="ion-align-self-center">
+    <center><ion-icon color="primary" name="image-outline" style="zoom: 6.0;"></ion-icon></center>
+   <h1>Exporte suas pastas</h1>
+  <p>Por fim você também terá a opção de exportar suas pastas, seja para o seu computador ou também pode ser compartilhada com seu colega por meio de um wifi local. Entre na nas configurações para mais informações.</p>
+   </ion-col>
+ </ion-row>
+ <ion-row>
+
+ </ion-row>
+ </ion-grid>
+</ion-slide>
+<ion-slide>
+  <ion-grid>
+    <ion-row >
+    <ion-col style="padding-bottom: 80px; " class="ion-align-self-center">
+      <img  src="assets/imgs/perfil2.jpg" style="border-radius:100px; width: 170px;">
+     <h1>Quem fez o app?</h1>
+    <p>Allan Hipólito, morador de Quintino Bocaiúva, cancêriano, 17 anos, estudante da Faetec, por meio de uma ideia criou um projeto real e utilizável que poderá ajudar muitos estudantes com este mesmo problema de organização em seus estudos. Boa Sorte::)</p>
+    <ion-button (click)="sair()">Terminar apresentação</ion-button>
+     </ion-col>
+     
+   </ion-row>
+   <ion-row>
+     
+   </ion-row>
+   <ion-row>
+  
+   </ion-row>
+   </ion-grid>
+</ion-slide>
+  </ion-slides>
+</ion-content>

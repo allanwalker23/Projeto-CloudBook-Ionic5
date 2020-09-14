@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+   <ion-title size="large">Criar disciplina</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="formulario" (ngSubmit)="criar()" novalidate>
+  <ion-list>
+  <ion-item>
+    <ion-input formControlName="nome" [(ngModel)]="nome" placeholder="Nome da disciplina"></ion-input>
+</ion-item>
+      
+    </ion-list>
+  </form>
+  <ion-button  (click)="criar()" expand="block">Adicionar disciplina</ion-button>
+  
+</ion-content>

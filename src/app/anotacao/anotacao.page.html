@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+     <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title size="large">Adicionar Anotação</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-item>
+    
+    <ion-input [(ngModel)]="assunto" placeholder="Assunto do conteúdo"></ion-input>
+</ion-item>
+<ion-item (ionChange)="selecionar($event)" >
+  <ion-label position="stacked">Disciplina</ion-label>
+  <ion-select>
+     
+    <ion-select-option *ngFor="let disciplina of disciplinas" value="{{disciplina.id}}">{{disciplina.nome}}</ion-select-option>
+   
+  </ion-select>
+
+</ion-item>
+<ion-item>
+  <ion-textarea [(ngModel)]="texto" placeholder="Escreva a sua anotação aqui..."></ion-textarea>
+</ion-item>
+     
+<ion-button (click)="adicionar()" expand="block">Adicionar anotação</ion-button>
+    
+     
+      
+  
+</ion-content>

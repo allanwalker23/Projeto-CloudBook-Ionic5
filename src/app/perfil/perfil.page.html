@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content >
+  <ion-refresher slot="fixed" (ionRefresh)="atualizar_pagina($event)" pullMin="100" pullMax="200">
+    <ion-refresher-content 
+      pullingIcon="arrow-down-outline" 
+      pullingText="Puxe para atualizar" 
+      refreshingSpinner="crescent"
+      refreshingText="Atualizando...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="4">
+      
+      <div (click)="acao()">
+        <img *ngIf="liberado==false" src="{{global.foto_default}}" class="perso">
+          <img *ngIf="liberado==true" [src]="foto_perfil" class="perso">
+          
+      </div>
+     
+    </ion-col>
+   
+  </ion-row>
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="12">
+      <center><ion-title color="light">{{this.nome}}</ion-title></center>
+    </ion-col>
+  </ion-row>
+  <form [formGroup]="formulario" (ngSubmit)="criar()" novalidate>
+  <ion-item>
+    <ion-label position="stacked">Nome</ion-label>
+    <ion-input formControlName="nome" value="{{aluno?.nome}}" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Email</ion-label>
+    <ion-input formControlName="email" disabled value="{{aluno?.email}}" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Telefone</ion-label>
+    <ion-input formControlName="telefone" value="{{aluno?.telefone}}" type="number"></ion-input>
+  </ion-item>
+
+ <ion-item>
+  <ion-label position="stacked">Gênero</ion-label>
+  
+      <ion-select  formControlName="genero" [(ngModel)]="genero">
+        <ion-select-option value="F" >Mulher</ion-select-option>
+        <ion-select-option value="H">Homem</ion-select-option>
+       
+      </ion-select>
+      
+    </ion-item>
+
+
+  <ion-item>
+    <ion-label position="stacked">Colégio</ion-label>
+    <ion-textarea formControlName="colegio" value="{{aluno?.colegio}}" ></ion-textarea>
+  </ion-item>
+  </form>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="update()"  defaultHref="home">
+      <ion-icon style=" color:black"name="checkmark"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+  
+  
+</ion-content>

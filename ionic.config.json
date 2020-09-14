@@ -1,5 +1,7 @@
 {
   "name": "Cloudbook",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
